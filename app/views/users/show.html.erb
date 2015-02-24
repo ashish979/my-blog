@@ -1,0 +1,14 @@
+<%= @user.username %>
+<%= form_tag(modify_users_path,:method => "get") do %>
+<%= hidden_field_tag(:username,@user.username) %>
+<table>
+<tr><th>Roles</th><th>Status</th></tr>
+<tr><td>Author</td><td><%= check_box_tag(:author,@user.author,@user.author) %></td></tr>
+<tr><td>Viewer</td><td><%= check_box_tag(:viewer,@user.viewer,@user.viewer) %></td></tr>
+<tr><td>Editor</td><td><%= check_box_tag(:editor,@user.editor,@user.editor) %></td></tr>
+<tr><td>Commenter</td><td><%= check_box_tag(:commenter,@user.commenter,@user.commenter) %></td></tr>
+<tr><td>Destroyer</td><td><%= check_box_tag(:destroyer,@user.destroyer,@user.destroyer) %></td></tr>
+</table>
+<%= submit_tag("save") %>
+<% end %>
+

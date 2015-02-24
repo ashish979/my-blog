@@ -1,0 +1,16 @@
+<h1>Login</h1>
+<%= form_for @user,:url => attempt_login_users_path do |f| %>
+	<p>
+	<%= f.label :username  %><br/>
+	<%= f.text_field :username %>
+	</p>
+	<p>
+	<%= f.label :password %><br/>
+	<%= f.password_field :password %>
+	</p>
+	<p>
+	<%= f.submit :login %>
+	</p>
+<% end %>	
+
+New User: <%= link_to 'Register', signup_path %>
