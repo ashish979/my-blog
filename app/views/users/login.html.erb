@@ -1,3 +1,7 @@
+<% if !flash[:notice].blank? %>
+<%= flash[:notice] %>
+<% end %>
+
 <h1>Login</h1>
 <%= form_for @user,:url => attempt_login_users_path do |f| %>
 	<p>

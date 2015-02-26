@@ -1,3 +1,9 @@
+<% if session[:username] %>
+<%= link_to 'logout', logout_users_path %>
+<% end %>
+
 <h1>Blogger's Blog</h1>
 <%= link_to 'My Blog', controller: 'articles' %><br/>
+<% if @user.author %>
 <%= link_to 'New article', new_article_path %>
+<% end %>

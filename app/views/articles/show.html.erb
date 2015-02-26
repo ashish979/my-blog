@@ -1,3 +1,7 @@
+<% if session[:username] %>
+<%= link_to 'logout', logout_users_path %>
+<% end %>
+
 <% if !flash[:notice].blank? %>
 <%= flash[:notice] %>
 <% end %>
@@ -13,9 +17,12 @@
 
 <h2>Comments</h2>
 <%= render @article.comments %>
- 
+<% if @user.commenter %>
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
 
-<%= link_to 'Back', articles_path %> |
+<%= link_to 'Back', articles_path %> 
+<% if @user.editor %>
 <%= link_to 'Edit', edit_article_path(@article) %>
+<% end %>
+<% end %>

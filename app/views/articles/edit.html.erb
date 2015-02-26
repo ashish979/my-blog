@@ -1,3 +1,7 @@
+<% if session[:username] %>
+<%= link_to 'logout', logout_users_path %>
+<% end %>
+
 <h1>Editing article</h1>
  
 <%= render 'form' %>

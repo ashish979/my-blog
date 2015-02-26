@@ -1,8 +1,8 @@
 class ArticlesController < ApplicationController
- before_action :confirm_loggin_in
- 
+ before_action :confirm_loggin_in,:set_variables
+ 	
 	def index
-		@articles = Article.all
+		@articles = Article.all		
 	end
 
 	def show
@@ -42,9 +42,23 @@ class ArticlesController < ApplicationController
 		redirect_to articles_path
 	end
 
+	def set_variables
+		if session[:username]
+			@user = User.find_by(:username => session[:username])
+		end
+	end
 	private
 	def article_params
 		params.require(:article).permit(:title, :text)
 	end
 	
+	def confirm_loggin_in
+		unless session[:username]
+			flash[:notice] = "Please login!!"
+			redirect_to login_users_path
+			return false
+		else
+			return true
+		end
+	end
 end

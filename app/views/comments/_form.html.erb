@@ -1,7 +1,8 @@
 <%= form_for([@article, @article.comments.build]) do |f| %>
   <p>
-    <%= f.label :commenter %><br>
-    <%= f.text_field :commenter %>
+    <%= f.label :commenter %> :
+    <%= session[:username].capitalize %>
+    <%= f.hidden_field :commenter,:value => session[:username]%>
   </p>
   <p>
     <%= f.label :body %><br>

@@ -1,3 +1,7 @@
+<% if session[:username] %>
+<%= link_to 'logout', logout_users_path %>
+<% end %>
+
 <h1>Listing articles</h1>
  
 <table>
@@ -12,13 +16,21 @@
       <td><%= article.title %></td>
       <td><%= article.text %></td>
             <td><%= article.id %></td>
+            <% if @user.viewer %>
             <td><%= link_to "Show", article_path(article) %></td>
+            <% end %>
+            
+            <% if @user.editor %>
             <td><%= link_to "edit", edit_article_path(article) %></td>
+            <% end %>
+            <% if @user.destroyer %>
             <td><%= link_to "delete", article_path(article), 
             method: :delete, 
             data: { confirm: "Are you Sure" } %></td>
+            <% end %>
     </tr>
   <% end %>
 </table>
-
+<% if @user.author %>
 <%= link_to "New Article", new_article_path %>
+<% end %>

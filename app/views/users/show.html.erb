@@ -1,3 +1,7 @@
+<% if session[:username] %>
+<%= link_to 'logout', logout_users_path %>
+<% end %>
+
 <%= @user.username %>
 <%= form_tag(modify_users_path,:method => "get") do %>
 <%= hidden_field_tag(:username,@user.username) %>

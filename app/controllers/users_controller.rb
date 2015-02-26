@@ -30,6 +30,7 @@ class UsersController < ApplicationController
         redirect_to  welcome_index_path
       end      
     else
+      flash[:notice] = "incorrect username/password"
       redirect_to '/users/login'      
     end
 
@@ -85,6 +86,7 @@ class UsersController < ApplicationController
   def confirm_loggin_in
   	unless session[:username]
   		redirect_to(:action => 'login')
+      flash[:notice] = "Please login!!"
       return false
   	else
       return true
