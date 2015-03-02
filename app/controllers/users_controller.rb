@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(:username, :email, :password, :password_confirmation)
   	user = User.new(:username => params[:user][:username], :password => params[:user][:password], :email => params[:user][:email])
     if user.save
+      UserMailer.welcome_email(user).deliver_now
       redirect_to(:action => 'login')
     else
       redirect_to '/signup'
@@ -49,7 +50,12 @@ class UsersController < ApplicationController
     @user = User.find_by_id(params[:username])
   end
 
-  def modify
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
     user = User.find_by(:username => params[:username])
     if params[:author]
       user.update(:author => true)

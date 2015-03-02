@@ -1,9 +1,8 @@
 <% if session[:username] %>
 <%= link_to 'logout', logout_users_path %>
 <% end %>
-
 <%= @user.username %>
-<%= form_tag(modify_users_path,:method => "get") do %>
+<%= form_tag(user_path(@user),:method => "patch") do %>
 <%= hidden_field_tag(:username,@user.username) %>
 <table>
 <tr><th>Roles</th><th>Status</th></tr>
@@ -15,4 +14,3 @@
 </table>
 <%= submit_tag("save") %>
 <% end %>
-

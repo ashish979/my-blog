@@ -6,5 +6,5 @@
 
 <% @user.each do |x| %>
 <%=	x.username %>
-<%= link_to 'modify', users_path(:username => x ) %><br> 
+<%= link_to 'modify', edit_user_path(x) %><br> 
 <% end %>
