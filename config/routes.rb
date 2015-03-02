@@ -10,14 +10,9 @@ Rails.application.routes.draw do
       post 'attempt_login'
       get 'admin'
       get 'logout'
-      get 'show'
-      get 'modify'
     end
   end
   resources :articles do
-     member do
-      get 'delete'
-    end
     resources :comments
   end
 

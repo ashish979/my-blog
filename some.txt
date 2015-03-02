@@ -1,0 +1,58 @@
+  INFO [9160daeb] Running /usr/bin/env mkdir -p /tmp/simple_blog_application/ as redmine@10.100.66.198
+ DEBUG [9160daeb] Command: /usr/bin/env mkdir -p /tmp/simple_blog_application/
+redmine@10.100.66.198's password:  INFO [9160daeb] Finished in 17.868 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/simple_blog_application/git-ssh.sh 0.0%
+  INFO Uploading /tmp/simple_blog_application/git-ssh.sh 100.0%
+  INFO [2fc005ae] Running /usr/bin/env chmod +x /tmp/simple_blog_application/git-ssh.sh as redmine@10.100.66.198
+ DEBUG [2fc005ae] Command: /usr/bin/env chmod +x /tmp/simple_blog_application/git-ssh.sh
+  INFO [2fc005ae] Finished in 0.015 seconds with exit status 0 (successful).
+  INFO [17a2f3bc] Running /usr/bin/env git ls-remote --heads https://github.com/ashish979/my-blog.git as redmine@10.100.66.198
+ DEBUG [17a2f3bc] Command: ( GIT_ASKPASS=/bin/echo GIT_SSH=/tmp/simple_blog_application/git-ssh.sh /usr/bin/env git ls-remote --heads https://github.com/ashish979/my-blog.git )
+ DEBUG [17a2f3bc] 	ee83b835c3a694e579adf7ff1bc74a1ae41b58e2	refs/heads/master
+  INFO [17a2f3bc] Finished in 1.369 seconds with exit status 0 (successful).
+  INFO [8f69d941] Running /usr/bin/env mkdir -p /var/www/simple_blog_application/shared /var/www/simple_blog_application/releases as redmine@10.100.66.198
+ DEBUG [8f69d941] Command: /usr/bin/env mkdir -p /var/www/simple_blog_application/shared /var/www/simple_blog_application/releases
+  INFO [8f69d941] Finished in 0.016 seconds with exit status 0 (successful).
+ DEBUG [1fab9d49] Running /usr/bin/env [ -f /var/www/simple_blog_application/current/REVISION ] as redmine@10.100.66.198
+ DEBUG [1fab9d49] Command: [ -f /var/www/simple_blog_application/current/REVISION ]
+ DEBUG [1fab9d49] Finished in 0.011 seconds with exit status 1 (failed).
+ DEBUG [f3e01183] Running /usr/bin/env [ -f /var/www/simple_blog_application/repo/HEAD ] as redmine@10.100.66.198
+ DEBUG [f3e01183] Command: [ -f /var/www/simple_blog_application/repo/HEAD ]
+ DEBUG [f3e01183] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/simple_blog_application/repo
+ DEBUG [7d0ac43f] Running /usr/bin/env if test ! -d /var/www/simple_blog_application/repo; then echo "Directory does not exist '/var/www/simple_blog_application/repo'" 1>&2; false; fi as redmine@10.100.66.198
+ DEBUG [7d0ac43f] Command: if test ! -d /var/www/simple_blog_application/repo; then echo "Directory does not exist '/var/www/simple_blog_application/repo'" 1>&2; false; fi
+ DEBUG [7d0ac43f] Finished in 0.012 seconds with exit status 0 (successful).
+  INFO [3e9cf4fb] Running /usr/bin/env git remote update as redmine@10.100.66.198
+ DEBUG [3e9cf4fb] Command: cd /var/www/simple_blog_application/repo && ( GIT_ASKPASS=/bin/echo GIT_SSH=/tmp/simple_blog_application/git-ssh.sh /usr/bin/env git remote update )
+ DEBUG [3e9cf4fb] 	Fetching origin
+  INFO [3e9cf4fb] Finished in 1.404 seconds with exit status 0 (successful).
+ DEBUG [ade598e2] Running /usr/bin/env if test ! -d /var/www/simple_blog_application/repo; then echo "Directory does not exist '/var/www/simple_blog_application/repo'" 1>&2; false; fi as redmine@10.100.66.198
+ DEBUG [ade598e2] Command: if test ! -d /var/www/simple_blog_application/repo; then echo "Directory does not exist '/var/www/simple_blog_application/repo'" 1>&2; false; fi
+ DEBUG [ade598e2] Finished in 0.011 seconds with exit status 0 (successful).
+  INFO [159b124b] Running /usr/bin/env mkdir -p /var/www/simple_blog_application/releases/20150226093614 as redmine@10.100.66.198
+ DEBUG [159b124b] Command: cd /var/www/simple_blog_application/repo && ( GIT_ASKPASS=/bin/echo GIT_SSH=/tmp/simple_blog_application/git-ssh.sh /usr/bin/env mkdir -p /var/www/simple_blog_application/releases/20150226093614 )
+  INFO [159b124b] Finished in 0.017 seconds with exit status 0 (successful).
+  INFO [d9e526e0] Running /usr/bin/env git archive master | tar -x -f - -C /var/www/simple_blog_application/releases/20150226093614 as redmine@10.100.66.198
+ DEBUG [d9e526e0] Command: cd /var/www/simple_blog_application/repo && ( GIT_ASKPASS=/bin/echo GIT_SSH=/tmp/simple_blog_application/git-ssh.sh /usr/bin/env git archive master | tar -x -f - -C /var/www/simple_blog_application/releases/20150226093614 )
+  INFO [d9e526e0] Finished in 0.028 seconds with exit status 0 (successful).
+ DEBUG [0e88d818] Running /usr/bin/env if test ! -d /var/www/simple_blog_application/repo; then echo "Directory does not exist '/var/www/simple_blog_application/repo'" 1>&2; false; fi as redmine@10.100.66.198
+ DEBUG [0e88d818] Command: if test ! -d /var/www/simple_blog_application/repo; then echo "Directory does not exist '/var/www/simple_blog_application/repo'" 1>&2; false; fi
+ DEBUG [0e88d818] Finished in 0.009 seconds with exit status 0 (successful).
+ DEBUG [b1fed92a] Running /usr/bin/env git rev-parse --short master as redmine@10.100.66.198
+ DEBUG [b1fed92a] Command: cd /var/www/simple_blog_application/repo && ( GIT_ASKPASS=/bin/echo GIT_SSH=/tmp/simple_blog_application/git-ssh.sh /usr/bin/env git rev-parse --short master )
+ DEBUG [b1fed92a] 	ee83b83
+ DEBUG [b1fed92a] Finished in 0.017 seconds with exit status 0 (successful).
+ DEBUG [8393ead4] Running /usr/bin/env if test ! -d /var/www/simple_blog_application/releases/20150226093614; then echo "Directory does not exist '/var/www/simple_blog_application/releases/20150226093614'" 1>&2; false; fi as redmine@10.100.66.198
+ DEBUG [8393ead4] Command: if test ! -d /var/www/simple_blog_application/releases/20150226093614; then echo "Directory does not exist '/var/www/simple_blog_application/releases/20150226093614'" 1>&2; false; fi
+ DEBUG [8393ead4] Finished in 0.012 seconds with exit status 0 (successful).
+  INFO [35849648] Running /usr/bin/env echo "ee83b83" >> REVISION as redmine@10.100.66.198
+ DEBUG [35849648] Command: cd /var/www/simple_blog_application/releases/20150226093614 && /usr/bin/env echo "ee83b83" >> REVISION
+  INFO [35849648] Finished in 0.016 seconds with exit status 0 (successful).
+ DEBUG [eff79f9a] Running /usr/bin/env if test ! -d /var/www/simple_blog_application/releases/20150226093614; then echo "Directory does not exist '/var/www/simple_blog_application/releases/20150226093614'" 1>&2; false; fi as redmine@10.100.66.198
+ DEBUG [eff79f9a] Command: if test ! -d /var/www/simple_blog_application/releases/20150226093614; then echo "Directory does not exist '/var/www/simple_blog_application/releases/20150226093614'" 1>&2; false; fi
+ DEBUG [eff79f9a] Finished in 0.012 seconds with exit status 0 (successful).
+  INFO [0f6d5260] Running /usr/bin/env bundle install --path /var/www/simple_blog_application/shared/bundle --without development test --deployment --quiet as redmine@10.100.66.198
+ DEBUG [0f6d5260] Command: cd /var/www/simple_blog_application/releases/20150226093614 && /usr/bin/env bundle install --path /var/www/simple_blog_application/shared/bundle --without development test --deployment --quiet
+ DEBUG [0f6d5260] 	/usr/bin/env: bundle
+ DEBUG [0f6d5260] 	: No such file or directory
