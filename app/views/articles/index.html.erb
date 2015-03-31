@@ -2,6 +2,11 @@
 <%= link_to 'logout', logout_users_path %>
 <% end %>
 
+<%= form_tag articles_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", :name => nil %>
+<% end %>
+
 <h1>Listing articles</h1>
  
 <table>
@@ -13,7 +18,7 @@
  
   <% @articles.each do |article| %>
     <tr>
-      <td><%= article.title %></td>
+      <td><%= highlight(article.title,params[:search]) %></td>
       <td><%= article.text %></td>
             <td><%= article.id %></td>
             <% if @user.viewer %>

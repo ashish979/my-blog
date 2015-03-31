@@ -2,7 +2,11 @@ class ArticlesController < ApplicationController
  before_action :confirm_loggin_in,:set_variables
  	
 	def index
-		@articles = Article.all		
+		@search = Article.search do
+			search_variable = params[:search]
+			fulltext "#{search_variable}"
+		end
+		@articles = @search.results		
 	end
 
 	def show

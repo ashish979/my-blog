@@ -1,8 +1,0 @@
-Ember.js
-
-- Javascript framework to make ambitious web applications.
-- Dependencies:
-	- Ember.js
-	- Ember-data -> Retrieval, updating and persistance of models over REST-Api
-	- jquery
-	- handlebar.js
